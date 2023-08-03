@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/random-dog/static/css/main.05ff8c97.css",
+    "main.js": "/random-dog/static/js/main.30dca27c.js",
+    "static/js/787.c4feb95f.chunk.js": "/random-dog/static/js/787.c4feb95f.chunk.js",
+    "static/media/alvan-nee-T-0EW-SEbsE-unsplash.jpg": "/random-dog/static/media/alvan-nee-T-0EW-SEbsE-unsplash.ff1d5be6d4bffa5757db.jpg",
+    "static/media/body-start-image.jpg": "/random-dog/static/media/body-start-image.ff1d5be6d4bffa5757db.jpg",
+    "static/media/Random-dog-logo.svg": "/random-dog/static/media/Random-dog-logo.3ab3a82f62e33acb3e4a5b037fbb4373.svg",
+    "static/media/icon_arrow_right.svg": "/random-dog/static/media/icon_arrow_right.ff1fd3aca75e4aa9d55d71ebcadfbfb8.svg",
+    "static/media/Icon_arrow_left.svg": "/random-dog/static/media/Icon_arrow_left.326202a238f7a7ecae3f3b4beab47beb.svg",
+    "index.html": "/random-dog/index.html",
+    "main.05ff8c97.css.map": "/random-dog/static/css/main.05ff8c97.css.map",
+    "main.30dca27c.js.map": "/random-dog/static/js/main.30dca27c.js.map",
+    "787.c4feb95f.chunk.js.map": "/random-dog/static/js/787.c4feb95f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05ff8c97.css",
+    "static/js/main.30dca27c.js"
+  ]
+}
