@@ -15,9 +15,6 @@ const dog = new Dog({
   },
 });
 
-
-
-
 function MainPage() {
   const [dogs, getDogs] = React.useState({});
   const [info, getInfo] = React.useState("");
@@ -33,9 +30,6 @@ function MainPage() {
   const [startImage, setStartImage] = React.useState();
   const [previousImageIndex, setPreviousImageIndex] = React.useState();
   const [length, getLength] = React.useState();
-
-
-
 
   function getNewDesc(number) {
     const newTitle = dogs[number].url;
@@ -164,9 +158,6 @@ function MainPage() {
     setWiki(wiki);
   }
 
-
-
-
   function handleImageError() {
     if (previousImageIndex === photos.value.length - 1 && photoIndex === 0) {
       const newIndex = 1;
@@ -216,59 +207,52 @@ function MainPage() {
     }
   }
 
-
-
-
-
-  
   async function getDogsArray() {
     const GetNewInfoFirst = (dogs) => {
-        const number = Math.round(Math.random() * dogs.length);
-    
-    const name = dogs[number].breed;
-    setName(name);
-    
-    
-    const origin = dogs[number].origin;
-    setOrigin(origin);
-    
-    const objectHeight = dogs[number].meta.height;
-    
-    if (typeof objectHeight === "object") {
-      const dogs = "Dogs: " + objectHeight.dogs;
-      const bitches = "Bitches: " + objectHeight.bitches;
-      const height = dogs + "; " + bitches;
-      setHeight(height);
-    } else {
-      const height = objectHeight;
-      setHeight(height);
-    }
-    
-    
-    const objectWeight = dogs[number].meta.weight;
-    
-    if (typeof objectWeight === "object") {
-      const dogs = "Dogs: " + objectWeight.dogs;
-      const bitches = "Bitches: " + objectWeight.bitches;
-      const weight = dogs + "; " + bitches;
-      setWeight(weight);
-    } else {
-      const weight = objectWeight;
-      setWeight(weight);
-    }
-    
-     const wiki = dogs[number].url;
-    setWiki(wiki);
-    
-    function getNewDesc(number) {
+      const number = Math.round(Math.random() * dogs.length);
+
+      const name = dogs[number].breed;
+      setName(name);
+
+      const origin = dogs[number].origin;
+      setOrigin(origin);
+
+      const objectHeight = dogs[number].meta.height;
+
+      if (typeof objectHeight === "object") {
+        const dogs = "Dogs: " + objectHeight.dogs;
+        const bitches = "Bitches: " + objectHeight.bitches;
+        const height = dogs + "; " + bitches;
+        setHeight(height);
+      } else {
+        const height = objectHeight;
+        setHeight(height);
+      }
+
+      const objectWeight = dogs[number].meta.weight;
+
+      if (typeof objectWeight === "object") {
+        const dogs = "Dogs: " + objectWeight.dogs;
+        const bitches = "Bitches: " + objectWeight.bitches;
+        const weight = dogs + "; " + bitches;
+        setWeight(weight);
+      } else {
+        const weight = objectWeight;
+        setWeight(weight);
+      }
+
+      const wiki = dogs[number].url;
+      setWiki(wiki);
+
+      function getNewDesc(number) {
         const newTitle = dogs[number].url;
         const title = newTitle.replace("https://en.wikipedia.org/wiki/", "");
-    
+
         const wiki = new Wiki({
           url: "https://en.wikipedia.org/w/api.php",
           data: title,
         });
-    
+
         Promise.all([wiki.getInfo()])
           .then(([info]) => {
             getInfo(info);
@@ -280,52 +264,52 @@ function MainPage() {
             console.log(`Возникла глобальная ошибка, ${err}`);
           });
       }
-        getNewDesc(number);
-    
-        const getNewPhotoArray = (number) => {
-            const newTitle = dogs[number].breed;
-            const title = newTitle.replace(" ", "%20");
-        
-            const photo = new Photo({
-              url: `https://bing-image-search1.p.rapidapi.com/images/search?q=${title}%20dog`,
-              headers: {
-                "X-RapidAPI-Key": "fa25da3ffamsh9bc1f269e92e98dp1387f7jsnbdf6b9d4bc82",
-                "X-RapidAPI-Host": "bing-image-search1.p.rapidapi.com",
-              },
-            });
-        
-            Promise.all([photo.getAllPhotos()])
-              .then(([photos]) => {
-                getPhotos(photos);
-                setStartImage(photos.value[0].contentUrl);
-                getLength(photos.value.length);
-                return photos;
-              })
-              .catch((err) => {
-                console.log(`Возникла глобальная ошибка, ${err}`);
-              });
-        
+      getNewDesc(number);
+
+      const getNewPhotoArray = (number) => {
+        const newTitle = dogs[number].breed;
+        const title = newTitle.replace(" ", "%20");
+
+        const photo = new Photo({
+          url: `https://bing-image-search1.p.rapidapi.com/images/search?q=${title}%20dog`,
+          headers: {
+            "X-RapidAPI-Key":
+              "fa25da3ffamsh9bc1f269e92e98dp1387f7jsnbdf6b9d4bc82",
+            "X-RapidAPI-Host": "bing-image-search1.p.rapidapi.com",
+          },
+        });
+
+        Promise.all([photo.getAllPhotos()])
+          .then(([photos]) => {
+            getPhotos(photos);
+            setStartImage(photos.value[0].contentUrl);
+            getLength(photos.value.length);
             return photos;
-          };
-        getNewPhotoArray(number);
-        getPhotoIndex(0);
+          })
+          .catch((err) => {
+            console.log(`Возникла глобальная ошибка, ${err}`);
+          });
+
+        return photos;
       };
+      getNewPhotoArray(number);
+      getPhotoIndex(0);
+    };
 
     function getDogsArr() {
       return Promise.all([dog.getAllDogs()])
         .then(([dogs]) => {
           getDogs(dogs);
-          GetNewInfoFirst(dogs)
+          GetNewInfoFirst(dogs);
         })
         .catch((err) => {
           console.log(`Возникла глобальная ошибка, ${err}`);
         });
     }
-  
-  
+
     await getDogsArr();
   }
-  
+
   useEffect(() => {
     async function fetchData() {
       await getDogsArray();
@@ -344,8 +328,6 @@ function MainPage() {
     getNewPhotoArray(number);
     getPhotoIndex(0);
   };
-  
-
 
   return (
     <div className="body-main">

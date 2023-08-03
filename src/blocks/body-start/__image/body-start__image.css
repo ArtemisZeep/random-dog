@@ -1,8 +1,6 @@
 .body-start__image {
-    object-fit:cover;
-    width: 100vw;
-    height: 85vh;
-    z-index: 1;
-    
-    
+  object-fit: cover;
+  width: 100vw;
+  height: 85vh;
+  z-index: 1;
 }

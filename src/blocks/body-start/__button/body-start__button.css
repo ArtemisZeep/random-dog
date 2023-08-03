@@ -1,44 +1,44 @@
-.body-start__button{
-    width: 30vw;
-    height: 15vh;
-    z-index: 2;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background-color: #ED9039;
-    border: 0;
-    border-radius: 2vh;
-    color: white;
-    font-family: 'Irish Grover', cursive;
-    font-size: 5vw;
-    -webkit-text-stroke: 2px black;
-    text-align: center;
-    border: white solid 1vw;
-    text-decoration: none;
-    vertical-align: middle;
-    line-height: 15vh;
--webkit-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
--webkit-text-stroke: 2px black;
+.body-start__button {
+  width: 30vw;
+  height: 15vh;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #ed9039;
+  border: 0;
+  border-radius: 2vh;
+  color: white;
+  font-family: "Irish Grover", cursive;
+  font-size: 5vw;
+  -webkit-text-stroke: 2px black;
+  text-align: center;
+  border: white solid 1vw;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 15vh;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-text-stroke: 2px black;
 }
 
 @media screen and (max-width: 899px) {
-    .body-start__button{
+  .body-start__button {
     width: 50vw;
     height: 25vh;
     line-height: 25vh;
     font-size: 10vw;
-    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .body-start__button{
+  .body-start__button {
     width: 50vw;
     height: 15vh;
     line-height: 15vh;
     font-size: 10vw;
-    }
+  }
 }

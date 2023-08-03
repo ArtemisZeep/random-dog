@@ -1,6 +1,6 @@
 .body-main__photo-block {
- display: flex;
- align-items: center;
- flex-direction: row;
- margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5vh;
 }

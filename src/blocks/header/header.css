@@ -1,13 +1,13 @@
-.header{
-    height: 20vh;
-    width: 100vw;
-    background-color: #ED9039;
-    display: flex;
-    margin: 0 auto;
+.header {
+  height: 20vh;
+  width: 100vw;
+  background-color: #ed9039;
+  display: flex;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 650px) {
-    .header{
-        height: 15vh;
-    }
+  .header {
+    height: 15vh;
+  }
 }

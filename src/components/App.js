@@ -2,12 +2,9 @@ import Header from "./Header";
 import StartPage from "./Start";
 import MainPage from "./Main";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import Logo from "../images/logo/Random-dog-logo.svg"
 
 function App() {
   const navigate = useNavigate();
-
-
 
   return (
     <div className="page">
@@ -39,4 +36,3 @@ function App() {
 }
 
 export default App;
-
