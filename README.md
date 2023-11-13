@@ -1,15 +1,22 @@
 # Project: Random-Dog
-
+# Description
 This application allows to get a random breed of dog, its photos, country of origin, height, weight, a link to Wikipedia and a description of the breed.
 
-Technologies used here:
-HTML5
-CSS3
+# Technologies used here:
+HTML
+
+CSS
+
 JavaScript
+
 React
+
 JSX
+
 Webpack
+
 NPM
+
 API - Wikimedia API, Bing Search API and Dogs Breed API
 
 What needs to be finalized:
